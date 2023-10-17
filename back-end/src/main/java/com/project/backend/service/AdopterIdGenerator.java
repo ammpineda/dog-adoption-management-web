@@ -1,4 +1,4 @@
-package com.project.backend.model;
+package com.project.backend.service;
 
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class IdGenerator implements IdentifierGenerator {
+public class AdopterIdGenerator implements IdentifierGenerator {
 
     // Generates ID number for new adopter using the next number after the latest ID registered
     @Override

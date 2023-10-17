@@ -1,6 +1,7 @@
 package com.project.backend.repository;
 
 import com.project.backend.model.Adopter;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -10,6 +11,12 @@ import java.util.Optional;
 
 @Repository
 public interface AdopterRepository extends CrudRepository<Adopter, Integer> {
-    List<Adopter> findByFirstName(@Param("firstName") String firstName);
-    List<Adopter> findByLastName(@Param("lastName") String lastName);
+    @Query("SELECT a FROM Adopter a WHERE CONCAT(a.firstName, ' ', a.lastName) LIKE %:name%")
+    List<Adopter> findByName(@Param("name") String name);
+
+    @Query("SELECT a FROM Adopter a WHERE CONCAT(a.email) LIKE %:email%")
+    List<Adopter> findByEmail(@Param("email")String email);
+
+    @Query("SELECT a FROM Adopter a WHERE CONCAT(a.phoneNumber) LIKE %:phone%")
+    List<Adopter> findByPhoneNumber(@Param("phone")String phoneNumber);
 }

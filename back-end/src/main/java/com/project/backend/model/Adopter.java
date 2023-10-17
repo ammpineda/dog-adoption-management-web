@@ -1,5 +1,7 @@
 package com.project.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -11,10 +13,11 @@ import java.util.List;
 public class Adopter {
     @Id
     @GeneratedValue(generator = "custom-id", strategy = GenerationType.IDENTITY)
-    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.model.IdGenerator")
+    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.AdopterIdGenerator")
     private int id;
     private String firstName;
     private String lastName;
+    private String fullName;
     private String displayImage; // image address path
     private String email;
     private String password;
@@ -23,8 +26,26 @@ public class Adopter {
     @Temporal(TemporalType.DATE)
     private Date registeredDate;
 
-    @OneToMany(mappedBy = "applicant", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "applicant")
+    @JsonIgnore
     private List<Application> applications;
+
+    public Adopter(int id, String firstName, String lastName, String fullName, String displayImage, String email, String password, String phoneNumber, String homeAddress, Date registeredDate, List<Application> applications) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fullName = fullName;
+        this.displayImage = displayImage;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.homeAddress = homeAddress;
+        this.registeredDate = registeredDate;
+        this.applications = applications;
+    }
+
+    public Adopter() {
+    }
 
     public int getId() {
         return id;
@@ -48,6 +69,14 @@ public class Adopter {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName() {
+        this.fullName = this.getFirstName() + " " + this.getLastName();
     }
 
     public String getDisplayImage() {

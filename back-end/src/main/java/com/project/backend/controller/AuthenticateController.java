@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class AuthController {
+public class AuthenticateController {
     @Autowired
     private AdopterService adopterService;
     @PostMapping("/adopter/login")

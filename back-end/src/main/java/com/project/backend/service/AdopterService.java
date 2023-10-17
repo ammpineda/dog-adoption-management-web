@@ -55,11 +55,10 @@ public class AdopterService {
     public Adopter getAdopterById(int adopterId) {
         return adopterRepository.findById(adopterId).orElse(null);
     }
-    public List<Adopter> getAdopterByFirstName(String firstName) {
-        return adopterRepository.findByFirstName(firstName);
+    public List<Adopter> getAdoptersByName(String adopterName){
+        return adopterRepository.findByName(adopterName);
     }
-    public List<Adopter> getAdopterByLastName(String lastName) {
-        return adopterRepository.findByLastName(lastName);
-    }
+    public List<Adopter> getAdoptersByEmail(String email) { return adopterRepository.findByEmail(email); }
+    public List<Adopter> getAdoptersByPhoneNumber(String phoneNumber) { return adopterRepository.findByPhoneNumber(phoneNumber); }
 
 }

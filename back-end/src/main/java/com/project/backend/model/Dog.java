@@ -1,28 +1,58 @@
 package com.project.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
 @Table(name="dog")
 public class Dog {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "custom-id", strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.DogIdGenerator")
     private int id;
     private String name;
     private String displayImage;
     private String breed;
     @Temporal(TemporalType.DATE)
     private Date birthDate;
-    private int age;
+    private String age;
     private String gender;
     private String color;
     private String size;
-    private String adoptionStatus;
+    private String adoptionStatus; // Default value
+    @Type(type = "text")
     private String description;
+    @Temporal(TemporalType.DATE)
+    private Date registeredDate;
 
-    @OneToOne(mappedBy = "dog", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "dog")
+    @JsonIgnore
     private Application application;
+
+    public Dog() {
+    }
+
+    public Dog(int id, String name, String displayImage, String breed, Date birthDate, String age, String gender, String color, String size, String adoptionStatus, String description, Date registeredDate, Application application) {
+        this.id = id;
+        this.name = name;
+        this.displayImage = displayImage;
+        this.breed = breed;
+        this.birthDate = birthDate;
+        this.age = age;
+        this.gender = gender;
+        this.color = color;
+        this.size = size;
+        this.adoptionStatus = adoptionStatus;
+        this.description = description;
+        this.registeredDate = registeredDate;
+        this.application = application;
+    }
 
     public int getId() {
         return id;
@@ -64,12 +94,17 @@ public class Dog {
         this.birthDate = birthDate;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAge(Date birthDate) {
+        if (birthDate != null) {
+            this.birthDate = birthDate;
+
+            int computedAge = calculateAge(this.birthDate);
+            this.age = String.valueOf(computedAge);
+        }
     }
 
     public String getGender() {
@@ -118,5 +153,31 @@ public class Dog {
 
     public void setApplication(Application application) {
         this.application = application;
+    }
+
+    public Date getRegisteredDate() {
+        return registeredDate;
+    }
+
+    public void setRegisteredDate(Date registeredDate) {
+        this.registeredDate = registeredDate;
+    }
+
+    private int calculateAge(Date birthDate) {
+        Calendar birthCalendar = Calendar.getInstance();
+        birthCalendar.setTime(birthDate);
+
+        Calendar currentCalendar = Calendar.getInstance();
+
+        int years = currentCalendar.get(Calendar.YEAR) - birthCalendar.get(Calendar.YEAR);
+
+        // Check if the birthdate hasn't occurred yet this year
+        if (currentCalendar.get(Calendar.MONTH) < birthCalendar.get(Calendar.MONTH)
+                || (currentCalendar.get(Calendar.MONTH) == birthCalendar.get(Calendar.MONTH)
+                && currentCalendar.get(Calendar.DAY_OF_MONTH) < birthCalendar.get(Calendar.DAY_OF_MONTH))) {
+            years--;
+        }
+
+        return years;
     }
 }
