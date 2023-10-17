@@ -1,5 +1,6 @@
 package com.project.backend.controller;
 
+import ch.qos.logback.classic.Logger;
 import com.project.backend.model.Adopter;
 import com.project.backend.service.AdopterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +28,21 @@ public class AdopterController {
     }
     @GetMapping("/get-adopter/name/{adopterName}")
     public List<Adopter> getAdoptersByName(@PathVariable String adopterName) {
-        List<Adopter> adoptersByFirstName = adopterService.getAdopterByFirstName(adopterName);
-        List<Adopter> adoptersByLastName = adopterService.getAdopterByLastName(adopterName);
-
-        List<Adopter> combinedResults = new ArrayList<>();
-        combinedResults.addAll(adoptersByFirstName);
-        combinedResults.addAll(adoptersByLastName);
-
-        return combinedResults;
+        List<Adopter> adoptersByName = new ArrayList<>();
+        adoptersByName = adopterService.getAdoptersByName(adopterName);
+        return adoptersByName;
+    }
+    @GetMapping("/get-adopter/email/{adopterEmail}")
+    public List<Adopter> getAdoptersByEmail(@PathVariable String adopterEmail){
+        List<Adopter> adoptersByEmail = new ArrayList<>();
+        adoptersByEmail = adopterService.getAdoptersByEmail(adopterEmail);
+        return adoptersByEmail;
+    }
+    @GetMapping("/get-adopter/phone/{adopterPhoneNumber}")
+    public List<Adopter> getAdoptersByPhoneNumber(@PathVariable String adopterPhoneNumber){
+        List<Adopter> adoptersByPhoneNumber = new ArrayList<>();
+        adoptersByPhoneNumber = adopterService.getAdoptersByPhoneNumber(adopterPhoneNumber);
+        return adoptersByPhoneNumber;
     }
     @GetMapping("/all-adopter")
     public List<Adopter> getAllAdopters() { return adopterService.getAllAdopters(); }
