@@ -1,1 +1,28 @@
-<p>nav-bar works!</p>
+<head>
+    <style>
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+        }
+
+        li.nav-item {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        a.nav-link {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul class="navbar">
+        <li class="nav-item"><a class="nav-link" routerLink="/home-page" routerLinkActive="active">Welcome</a></li>
+        <li class="nav-item"><a class="nav-link" href="">About</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/">Support</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/adopter-login" routerLinkActive="active">Connect</a></li>
+    </ul>
+</body>

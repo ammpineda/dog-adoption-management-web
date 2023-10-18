@@ -1,5 +1,6 @@
 package com.project.backend.controller;
 
+import ch.qos.logback.classic.Logger;
 import com.project.backend.model.Adopter;
 import com.project.backend.service.AdopterService;
 import org.springframework.beans.factory.annotation.Autowired;

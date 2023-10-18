@@ -15,6 +15,7 @@ public class AdopterService {
     AdopterRepository adopterRepository;
 
     public Adopter registerAdopter(Adopter adopter){
+        adopter.setFullName();
         adopter.setRegisteredDate(new Date());
         return adopterRepository.save(adopter);
     }
