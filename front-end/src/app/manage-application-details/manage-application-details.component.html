@@ -5,19 +5,19 @@
 
         <p>
             Name:
-            <input [(ngModel)]="applicant.fullName" [disabled]="!editMode" />
+            <input [(ngModel)]="applicant.fullName" [disabled]="true" />
         </p>
         <p>
             Email Address:
-            <input [(ngModel)]="applicant.email" [disabled]="!editMode" />
+            <input [(ngModel)]="applicant.email" [disabled]="true" />
         </p>
         <p>
             Phone Number:
-            <input [(ngModel)]="applicant.phoneNumber" [disabled]="!editMode" />
+            <input [(ngModel)]="applicant.phoneNumber" [disabled]="true" />
         </p>
         <p>
             Home Address:
-            <textarea [(ngModel)]="applicant.homeAddress" [disabled]="!editMode"></textarea>
+            <textarea [(ngModel)]="applicant.homeAddress" [disabled]="true"></textarea>
         </p>
     </div>
 </div>
@@ -28,19 +28,19 @@
   <div class="dog-info">
     <p>
       Name:
-      <input [(ngModel)]="dog.name" disabled/>
+      <input [(ngModel)]="dog.name" [disabled]="true"/>
     </p>
     <p>
       Gender:
-      <input [(ngModel)]="dog.gender" disabled/>
+      <input [(ngModel)]="dog.gender" [disabled]="true"/>
     </p>
     <p>
       Breed:
-      <input [(ngModel)]="dog.breed" disabled/>
+      <input [(ngModel)]="dog.breed" [disabled]="true"/>
     </p>
     <p>
       Age:
-      <input [(ngModel)]="dog.age" disabled/>
+      <input [(ngModel)]="dog.age" [disabled]="true"/>
       months
     </p>
     <p>
