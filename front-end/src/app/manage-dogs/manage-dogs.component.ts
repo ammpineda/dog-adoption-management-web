@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class ManageDogsComponent implements OnInit {
   searchQuery: string = '';
   filterType: string = 'name';
-  dogs: Dog[] = []; // Property to hold the list of dogs
+  dogs: Dog[] = [];
   filteredDogs: Dog[] = [];
   selectedDog: Dog = new Dog(); 
 

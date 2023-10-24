@@ -18,7 +18,7 @@ export class AddAdopterComponent {
   onFileSelected(event: any) {
     this.selectedImage = event.target.files[0] as File;
     if (this.selectedImage) {
-      this.adopter.displayImage = this.selectedImage.name; // Store the file name as the address
+      this.adopter.displayImage = this.selectedImage.name;
     }
   }
 

@@ -48,12 +48,10 @@ export class ShowDogDetailsComponent {
     this.http.post('http://localhost:18080/api/application/submit', adoptionRequest).subscribe(
     (response: any) => {
       console.log('Adoption successful:', response);
-      // You can implement success handling here, e.g., display a success message
       this.router.navigate(['/show-dogs']);
     },
     (error) => {
       console.error('Adoption failed:', error);
-      // You can provide error handling or feedback to the user
     }
   );
 

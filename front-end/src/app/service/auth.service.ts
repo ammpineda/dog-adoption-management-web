@@ -20,7 +20,6 @@ export class AuthService {
 
   setIsAdminLoggedIn(value: boolean) {
     this.isAdminLoggedIn.next(value);
-    // Update local storage
     this.saveToLocalStorage('isAdminLoggedIn', value);
   }
 
@@ -30,7 +29,6 @@ export class AuthService {
 
   setIsUserLoggedIn(value: boolean) {
     this.isUserLoggedIn.next(value);
-    // Update local storage
     this.saveToLocalStorage('isUserLoggedIn', value);
   }
 
@@ -40,7 +38,6 @@ export class AuthService {
 
   setIsConnected(value: boolean) {
     this.isConnected.next(value);
-    // Update local storage
     this.saveToLocalStorage('isConnected', value);
   }
 
