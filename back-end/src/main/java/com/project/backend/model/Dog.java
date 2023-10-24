@@ -170,14 +170,17 @@ public class Dog {
         Calendar currentCalendar = Calendar.getInstance();
 
         int years = currentCalendar.get(Calendar.YEAR) - birthCalendar.get(Calendar.YEAR);
+        int months = currentCalendar.get(Calendar.MONTH) - birthCalendar.get(Calendar.MONTH);
 
-        // Check if the birthdate hasn't occurred yet this year
-        if (currentCalendar.get(Calendar.MONTH) < birthCalendar.get(Calendar.MONTH)
-                || (currentCalendar.get(Calendar.MONTH) == birthCalendar.get(Calendar.MONTH)
-                && currentCalendar.get(Calendar.DAY_OF_MONTH) < birthCalendar.get(Calendar.DAY_OF_MONTH))) {
+        if (currentCalendar.get(Calendar.DAY_OF_MONTH) < birthCalendar.get(Calendar.DAY_OF_MONTH)) {
+            months--;
+        }
+
+        if (months < 0) {
+            months += 12;
             years--;
         }
 
-        return years;
+        return years * 12 + months;
     }
 }

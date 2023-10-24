@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 @Entity
 @Table(name="application")
@@ -13,12 +15,9 @@ public class Application {
     @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.ApplicationIdGenerator")
     private int id;
     private String status;
-    @Temporal(TemporalType.DATE)
-    private Date submittedDate;
-    @Temporal(TemporalType.DATE)
-    private Date reviewDate;
-    @Temporal(TemporalType.DATE)
-    private Date approvalDate;
+    private LocalDateTime submittedDate;
+    private LocalDateTime reviewDate;
+    private LocalDateTime approvalDate;
 
     @ManyToOne
     @JoinColumn(name = "applicant_id")
@@ -31,7 +30,7 @@ public class Application {
     public Application() {
     }
 
-    public Application(int id, String status, Date submittedDate, Date reviewDate, Date approvalDate, Adopter applicant, Dog dog) {
+    public Application(int id, String status, LocalDateTime submittedDate, LocalDateTime reviewDate, LocalDateTime approvalDate, Adopter applicant, Dog dog) {
         this.id = id;
         this.status = status;
         this.submittedDate = submittedDate;
@@ -57,27 +56,27 @@ public class Application {
         this.status = status;
     }
 
-    public Date getSubmittedDate() {
+    public LocalDateTime getSubmittedDate() {
         return submittedDate;
     }
 
-    public void setSubmittedDate(Date submittedDate) {
+    public void setSubmittedDate(LocalDateTime submittedDate) {
         this.submittedDate = submittedDate;
     }
 
-    public Date getReviewDate() {
+    public LocalDateTime getReviewDate() {
         return reviewDate;
     }
 
-    public void setReviewDate(Date reviewDate) {
+    public void setReviewDate(LocalDateTime reviewDate) {
         this.reviewDate = reviewDate;
     }
 
-    public Date getApprovalDate() {
+    public LocalDateTime getApprovalDate() {
         return approvalDate;
     }
 
-    public void setApprovalDate(Date approvalDate) {
+    public void setApprovalDate(LocalDateTime approvalDate) {
         this.approvalDate = approvalDate;
     }
 

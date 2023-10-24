@@ -14,4 +14,7 @@ public interface ApplicationRepository extends CrudRepository<Application, Integ
     List<Application> findByApplicantName(@Param("applicant") String applicantName);
     @Query("SELECT a FROM Application a WHERE CONCAT(a.dog.name) LIKE %:dog%")
     List<Application> findByDogName(@Param("dog") String dogName);
+
+    @Query("SELECT a FROM Application a WHERE a.applicant.id LIKE %:id%")
+    List<Application> findByApplicantId(@Param("id") int id);
 }

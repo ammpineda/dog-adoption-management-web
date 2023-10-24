@@ -1,0 +1,40 @@
+<div class="form-container">
+  <form *ngIf="switchLoginForm" (ngSubmit)="onLoginSubmit()">
+    <h2>User Login</h2>
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" [(ngModel)]="loginRequest.email" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="loginRequest.password" required>
+    </div>
+    <div>
+      <button type="submit">Login</button>
+    </div>
+    <div>
+      <button type="button" (click)="goToRegister()">Register</button>
+    </div>
+  </form>
+
+  <form *ngIf="!switchLoginForm" (ngSubmit)="onAdminLoginSubmit()">
+    <h2>Admin Login</h2>
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" [(ngModel)]="loginRequest.email" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="loginRequest.password" required>
+    </div>
+    <div>
+      <button type="submit">Login</button>
+    </div>
+  </form>
+</div>
+
+<button class="toggle-button" (click)="toggleFormVisibility">{{ switchLoginForm ? 'Sign as Admin' : 'Sign as User' }}</button>
+
+<div *ngIf="loginMessage">
+  {{ loginMessage }}
+</div>

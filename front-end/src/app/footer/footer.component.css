@@ -1,0 +1,46 @@
+/* Import the Montserrat font if you haven't already */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.app-footer {
+  background-color: #977e60;
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.footer-column {
+  text-align: left; 
+}
+
+.footer-column h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  text-align: left;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin: 5px 0;
+  text-align: left;
+}
+
+.footer-column a, li {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.social-media-icons a {
+    margin-right: 10px; 
+    font-size: 30px;
+  }
+
+  
+  

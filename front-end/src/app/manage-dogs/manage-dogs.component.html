@@ -1,0 +1,40 @@
+<div class="search-bar">
+  <input type="text" placeholder="Search by" [(ngModel)]="searchQuery"/>
+  <label>
+    <input type="radio" [(ngModel)]="filterType" [value]="'name'" />
+    Name
+  </label>
+  <label>
+    <input type="radio" [(ngModel)]="filterType" [value]="'gender'" />
+    Gender
+  </label>
+  <label>
+    <input type="radio" [(ngModel)]="filterType" [value]="'status'" />
+    Status
+  </label>
+  <button (click)="applyFilter()">Search</button>
+</div>
+
+<h2>List of Dogs</h2>
+<table class="dog-table">
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Breed</th>
+    <th>Age</th>
+    <th>Adoption Status</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let dog of dogs">
+    <td>{{ dog.name }}</td>
+    <td>{{ dog.gender }}</td>
+    <td>{{ dog.breed }}</td>
+    <td>{{ dog.age }} months</td>
+    <td>{{ dog.adoptionStatus }}</td>
+    <td>
+      <button (click)="navigateToDogDetails(dog)">Update Details</button>
+    </td>
+  </tr>
+</table>
+<button (click)="navigateToAddDog()">Add Dog</button>
+

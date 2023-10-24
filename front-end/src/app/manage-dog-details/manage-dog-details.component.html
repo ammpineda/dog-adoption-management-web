@@ -1,0 +1,54 @@
+<h2>Dog Details</h2>
+<div class="dog-details">
+  <img [src]="'assets/dog-displayimages/' + selectedDog.displayImage" alt="{{ selectedDog.name }}" class="dog-image">
+  <div class="dog-info">
+    <p>
+      Name:
+      <input [(ngModel)]="selectedDog.name" [disabled]="!editMode" />
+    </p>
+    <p>
+      Gender:
+      <input [(ngModel)]="selectedDog.gender" [disabled]="!editMode" />
+    </p>
+    <p>
+      Breed:
+      <input [(ngModel)]="selectedDog.breed" [disabled]="!editMode" />
+    </p>
+    <p>
+      Age:
+      <input [(ngModel)]="selectedDog.age" [disabled]="!editMode" />
+      months
+    </p>
+    <p>
+      Adoption Status:
+      <input [(ngModel)]="selectedDog.adoptionStatus" [disabled]="!editMode" />
+    </p>
+    <p>
+      Birth Date:
+      <input type="date" [(ngModel)]="selectedDog.birthDate" [disabled]="!editMode" />
+    </p>
+    <p>
+      Display Image
+      <input type="file" [(ngModel)]="newDisplayImage" (change)="onFileSelected($event)" [disabled]="!editMode" />
+    </p>
+    <p>
+      Color:
+      <input [(ngModel)]="selectedDog.color" [disabled]="!editMode" />
+    </p>
+    <p>
+      Size:
+      <input [(ngModel)]="selectedDog.size" [disabled]="!editMode" />
+    </p>
+    <p>
+      Description:
+      <textarea [(ngModel)]="selectedDog.description" [disabled]="!editMode"></textarea>
+    </p>
+    <div>
+      <button *ngIf="editMode" (click)="saveChanges()">Save Changes</button>
+      <button (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
+      <button (click)="deleteRecord()">Delete</button>
+    </div>
+  </div>
+</div>
+
+<button routerLink="/manage-dogs">Back</button>

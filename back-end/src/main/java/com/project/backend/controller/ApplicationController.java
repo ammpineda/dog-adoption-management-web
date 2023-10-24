@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
-@RequestMapping("/application")
+@RequestMapping("/api/application")
 public class ApplicationController {
     @Autowired
     private ApplicationService applicationService;
@@ -38,6 +39,12 @@ public class ApplicationController {
         List<Application> applicationsByDog = new ArrayList<>();
         applicationsByDog = applicationService.searchByDogName(name);
         return applicationsByDog;
+    }
+    @GetMapping("/get-application/applicant-id/{id}")
+    public List<Application> getApplicationsByApplicantId(@PathVariable int id){
+        List<Application> applicationsByApplicantId = new ArrayList<>();
+        applicationsByApplicantId = applicationService.searchByApplicantId(id);
+        return applicationsByApplicantId;
     }
     @GetMapping("/all-application")
     public List<Application> getAllApplications(){

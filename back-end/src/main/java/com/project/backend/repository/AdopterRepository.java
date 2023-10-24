@@ -1,5 +1,6 @@
 package com.project.backend.repository;
 
+import com.project.backend.model.Admin;
 import com.project.backend.model.Adopter;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -19,4 +20,10 @@ public interface AdopterRepository extends CrudRepository<Adopter, Integer> {
 
     @Query("SELECT a FROM Adopter a WHERE CONCAT(a.phoneNumber) LIKE %:phone%")
     List<Adopter> findByPhoneNumber(@Param("phone")String phoneNumber);
+
+    @Query("SELECT a FROM Adopter a WHERE a.email = :email")
+    Adopter findUserByEmail(@Param("email") String email);
+
+    @Query("SELECT a FROM Adopter a WHERE a.password = :password")
+    Adopter findUserByPassword(@Param("password") String pass);
 }

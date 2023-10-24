@@ -1,28 +1,47 @@
-<head>
-    <style>
-        ul.navbar {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-        }
 
-        li.nav-item {
-            display: inline;
-            margin-right: 15px;
-        }
-
-        a.nav-link {
-            text-decoration: none;
-            color: #fff;
-        }
-    </style>
-</head>
 <body>
     <ul class="navbar">
-        <li class="nav-item"><a class="nav-link" routerLink="/home-page" routerLinkActive="active">Welcome</a></li>
-        <li class="nav-item"><a class="nav-link" href="">About</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/">Support</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/adopter-login" routerLinkActive="active">Connect</a></li>
+        <li class="nav-item logo-item">
+            <img [src]="'assets/icons/logo.png'" alt="Logo" width="200">
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/home-page" routerLinkActive="active">WELCOME</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/">SUPPORT</a>
+        </li>
+        
+        <li class="nav-item" *ngIf="isAdminLoggedIn">
+            <a class="nav-link" routerLink="/manage-dogs" routerLinkActive="active">MANAGE DOGS</a>
+        </li>
+
+        <li class="nav-item" *ngIf="isAdminLoggedIn">
+            <a class="nav-link" routerLink="/manage-adopters" routerLinkActive="active">MANAGE USERS</a>
+        </li>
+
+        <li class="nav-item" *ngIf="isAdminLoggedIn">
+            <a class="nav-link" routerLink="/manage-applications" routerLinkActive="active">MANAGE APPLICATIONS</a>
+        </li>
+        
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+            <a class="nav-link" routerLink="/show-dogs" routerLinkActive="active">APPLY ADOPTION</a>
+        </li>
+
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+            <a class="nav-link" routerLink="/show-applications" routerLinkActive="active">VIEW APPLICATIONS</a>
+        </li>
+        
+        <li class="nav-item" *ngIf="!isConnected">
+            <a class="nav-link logout-button" routerLink="/login" routerLinkActive="active">CONNECT</a>
+        </li>
+        
+        <li class="nav-item" *ngIf="isConnected">
+            <a class="nav-link logout-button" routerLink="/home-page" routerLinkActive="active" (click)="onLogOut()">SIGN OUT</a>
+        </li>
     </ul>
 </body>

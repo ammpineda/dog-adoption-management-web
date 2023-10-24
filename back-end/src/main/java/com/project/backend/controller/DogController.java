@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/dog")
+@CrossOrigin(origins="http://localhost:4200")
+@RequestMapping("/api/dog")
 public class DogController {
     @Autowired
     private DogService dogService;

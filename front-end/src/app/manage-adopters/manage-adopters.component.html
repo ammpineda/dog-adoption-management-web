@@ -1,0 +1,37 @@
+<div class="search-bar">
+    <input type="text" placeholder="Search by" [(ngModel)]="searchQuery"/>
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'fullName'" />
+      Name
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'email'" />
+      Email
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'phoneNumber'" />
+      Phone Number
+    </label>
+    <button (click)="applyFilter()">Search</button>
+  </div>
+  
+  <h2>List of Adopters</h2>
+  <table class="adopter-table">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let adopter of adopters">
+      <td>{{ adopter.fullName }}</td>
+      <td>{{ adopter.email }}</td>
+      <td>{{ adopter.phoneNumber }}</td>
+      <td>
+        <button (click)="navigateToAdopterDetails(adopter)">Update Details</button>
+      </td>
+    </tr>
+  </table>
+  <button (click)="navigateToAddAdopter()">Add Adopter</button>
+  
+  

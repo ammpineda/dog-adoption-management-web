@@ -11,9 +11,19 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ShowDogsComponent } from './show-dogs/show-dogs.component';
-import { AdopterLoginComponent } from './adopter-login/adopter-login.component';
-import { AdopterRegisterComponent } from './adopter-register/adopter-register.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ManageDogsComponent } from './manage-dogs/manage-dogs.component';
+import { ManageAdoptersComponent } from './manage-adopters/manage-adopters.component';
+import { ManageApplicationsComponent } from './manage-applications/manage-applications.component';
+import { ShowDogDetailsComponent } from './show-dog-details/show-dog-details.component';
+import { ShowApplicationsComponent } from './show-applications/show-applications.component';
+import { ShowApplicationDetailsComponent } from './show-application-details/show-application-details.component';
+import { AddDogComponent } from './add-dog/add-dog.component';
+import { ManageDogDetailsComponent } from './manage-dog-details/manage-dog-details.component';
+import { ManageAdopterDetailsComponent } from './manage-adopter-details/manage-adopter-details.component';
+import { AddAdopterComponent } from './add-adopter/add-adopter.component';
+import { ManageApplicationDetailsComponent } from './manage-application-details/manage-application-details.component';
 
 
 @NgModule({
@@ -24,9 +34,19 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     HomePageComponent,
     AboutPageComponent,
     ShowDogsComponent,
-    AdopterLoginComponent,
-    AdopterRegisterComponent,
-    AdminLoginComponent
+    LoginComponent,
+    RegisterComponent,
+    ManageDogsComponent,
+    ManageAdoptersComponent,
+    ManageApplicationsComponent,
+    ShowDogDetailsComponent,
+    ShowApplicationsComponent,
+    ShowApplicationDetailsComponent,
+    AddDogComponent,
+    ManageDogDetailsComponent,
+    ManageAdopterDetailsComponent,
+    AddAdopterComponent,
+    ManageApplicationDetailsComponent
   ],
   imports: [
     BrowserModule,

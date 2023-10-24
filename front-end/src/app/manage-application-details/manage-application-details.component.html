@@ -1,0 +1,98 @@
+<h2>Adopter Details</h2>
+<div class="adopter-details">
+    <img [src]="'assets/user-displayimages/' + applicant.displayImage" alt="{{ applicant.fullName }}" class="adopter-image">
+    <div class="adopter-info">
+
+        <p>
+            Name:
+            <input [(ngModel)]="applicant.fullName" [disabled]="!editMode" />
+        </p>
+        <p>
+            Email Address:
+            <input [(ngModel)]="applicant.email" [disabled]="!editMode" />
+        </p>
+        <p>
+            Phone Number:
+            <input [(ngModel)]="applicant.phoneNumber" [disabled]="!editMode" />
+        </p>
+        <p>
+            Home Address:
+            <textarea [(ngModel)]="applicant.homeAddress" [disabled]="!editMode"></textarea>
+        </p>
+    </div>
+</div>
+
+<h2>Dog Details</h2>
+<div class="dog-details">
+  <img [src]="'assets/dog-displayimages/' + dog.displayImage" alt="{{ dog.name }}" class="dog-image">
+  <div class="dog-info">
+    <p>
+      Name:
+      <input [(ngModel)]="dog.name" disabled/>
+    </p>
+    <p>
+      Gender:
+      <input [(ngModel)]="dog.gender" disabled/>
+    </p>
+    <p>
+      Breed:
+      <input [(ngModel)]="dog.breed" disabled/>
+    </p>
+    <p>
+      Age:
+      <input [(ngModel)]="dog.age" disabled/>
+      months
+    </p>
+    <p>
+      Adoption Status:
+      <input [(ngModel)]="dog.adoptionStatus" disabled/>
+    </p>
+    <p>
+      Birth Date:
+      <input [(ngModel)]="dog.birthDate" disabled/>
+    </p>
+    <p>
+      Color:
+      <input [(ngModel)]="dog.color" disabled />
+    </p>
+    <p>
+      Size:
+      <input [(ngModel)]="dog.size" disabled/>
+    </p>
+    <p>
+      Description:
+      <textarea [(ngModel)]="dog.description" disabled></textarea>
+    </p>
+  </div>
+</div>
+
+<h2>Application Details</h2>
+<div class="application-details">
+  <div class="application-info">
+    <p>
+      Status:
+      <select [(ngModel)]="selectedApplication.status" [disabled]="!editMode">
+        <option *ngFor="let option of statusOptions" [ngValue]="option">{{ option }}</option>
+      </select>
+    </p>
+    <p>
+      Date Submitted:
+      <input type="datetime-local" [(ngModel)]="selectedApplication.submittedDate" [disabled]="!editMode"/>
+    </p>
+    <p>
+      Date Reviewed:
+      <input type="datetime-local" [(ngModel)]="selectedApplication.reviewDate" [disabled]="!editMode"/>
+    </p>
+    <p>
+      Date Approved:
+      <input type="datetime-local" [(ngModel)]="selectedApplication.approvalDate" [disabled]="!editMode"/>
+    </p>
+    <div>
+        <button *ngIf="editMode" (click)="saveChanges()">Save Changes</button>
+        <button (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
+        <button (click)="deleteRecord()">Delete</button>
+    </div>
+  </div>
+</div>
+
+<button routerLink="/manage-applications">Back</button>

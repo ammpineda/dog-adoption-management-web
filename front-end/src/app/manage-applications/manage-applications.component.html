@@ -1,0 +1,28 @@
+<h2> List of Applications </h2>
+
+<table class="table">
+    <tbody>
+      <tr>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Submitted Date</th>
+        <th>Review Date</th>
+        <th>Approval Date</th>
+        <th>Applicant Name</th>
+        <th>Dog Name</th>
+        <th> </th>
+      </tr>
+      <tr *ngFor="let application of applications">
+        <td>{{ application.id }}</td>
+        <td>{{ application.status }}</td>
+        <td>{{ application.submittedDate | date:'short' }}</td>
+        <td>{{ application.reviewDate | date:'short' }}</td>
+        <td>{{ application.approvalDate | date:'short' }}</td>
+        <td>{{ application.applicant.fullName }}</td>
+        <td>{{ application.dog.name }}</td>
+        <td>
+          <a [routerLink]="['/manage-application-details', application.id]">View Details</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

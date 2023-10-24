@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Montserrat:wght@300&display=swap');
+
+/* Headings and Interactive Buttons (Kumbh Sans) */
+h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Kumbh Sans', sans-serif;
+  }
+  
+/* The rest of your content (Kulim Park + Montserrat) */
+body, p, a, button, input, textarea, li {
+  font-family: 'Kulim Park', 'Montserrat', sans-serif;
+}
+
+.background {
+  background-image: linear-gradient(#FCE4B4, transparent);
+}

@@ -1,0 +1,38 @@
+<h2>Adopter Details</h2>
+<div class="adopter-details">
+    <img [src]="'assets/user-displayimages/' + selectedAdopter.displayImage" alt="{{ selectedAdopter.fullName }}" class="adopter-image">
+    <div class="adopter-info">
+
+        <p>
+            Name:
+            <input [(ngModel)]="selectedAdopter.fullName" [disabled]="!editMode" />
+        </p>
+        <p>
+            Display Image:
+            <input type="file" [(ngModel)]="newDisplayImage" (change)="onFileSelected($event)" [disabled]="!editMode" />
+        </p>
+        <p>
+            Email Address:
+            <input [(ngModel)]="selectedAdopter.email" [disabled]="!editMode" />
+        </p>
+        <p>
+            Password:
+            <input [(ngModel)]="selectedAdopter.password" [disabled]="!editMode" />
+        </p>
+        <p>
+            Phone Number:
+            <input [(ngModel)]="selectedAdopter.phoneNumber" [disabled]="!editMode" />
+        </p>
+        <p>
+            Home Address:
+            <textarea [(ngModel)]="selectedAdopter.homeAddress" [disabled]="!editMode"></textarea>
+        </p>
+        <div>
+            <button *ngIf="editMode" (click)="saveChanges()">Save Changes</button>
+            <button (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
+            <button (click)="deleteRecord()">Delete</button>
+          </div>
+    </div>
+</div>
+
+<button routerLink="/manage-adopters">Back</button>

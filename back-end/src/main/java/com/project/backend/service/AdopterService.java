@@ -1,5 +1,6 @@
 package com.project.backend.service;
 
+import com.project.backend.model.Admin;
 import com.project.backend.model.Adopter;
 import com.project.backend.repository.AdopterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,4 +63,11 @@ public class AdopterService {
     public List<Adopter> getAdoptersByEmail(String email) { return adopterRepository.findByEmail(email); }
     public List<Adopter> getAdoptersByPhoneNumber(String phoneNumber) { return adopterRepository.findByPhoneNumber(phoneNumber); }
 
+    public Adopter getUserByEmail(String email) {
+        return adopterRepository.findUserByEmail(email);
+    }
+
+    public Adopter getUserByPassword(String password){
+        return adopterRepository.findUserByPassword(password);
+    }
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -25,12 +26,14 @@ public class ApplicationService {
         Adopter applicant = adopterService.getAdopterById(application.getApplicant().getId());
         Dog dog = dogService.getDogById(application.getDog().getId());
 
+        application.setStatus("Submitted");
         application.setApplicant(applicant);
 
         dog.setAdoptionStatus("Reserved");
         application.setDog(dog);
 
-        application.setSubmittedDate(new Date());
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        application.setSubmittedDate(currentDateTime);
         return applicationRepository.save(application);
     }
 
@@ -45,9 +48,15 @@ public class ApplicationService {
             }
             if (update.getReviewDate()!=null){
                 existing.setReviewDate(update.getReviewDate());
+            } else if (update.getStatus().trim().equalsIgnoreCase("Under Review")){
+                LocalDateTime currentDateTime = LocalDateTime.now();
+                existing.setReviewDate(currentDateTime);
             }
             if (update.getApprovalDate()!=null){
                 existing.setApprovalDate(update.getApprovalDate());
+            } else if (update.getStatus().trim().equalsIgnoreCase("Approved")){
+                LocalDateTime currentDateTime = LocalDateTime.now();
+                existing.setApprovalDate(currentDateTime);
             }
             if (update.getApplicant()!=null){
                 existing.setApplicant(update.getApplicant());
@@ -55,6 +64,9 @@ public class ApplicationService {
             if (update.getDog()!=null){
                 existing.setDog(update.getDog());
             }
+
+
+
             return applicationRepository.save(existing);
         }else{
             return null;
@@ -77,7 +89,16 @@ public class ApplicationService {
         return applicationRepository.findByDogName(dogName);
     }
 
+    public List<Application> searchByApplicantId(int id) {
+        return applicationRepository.findByApplicantId(id);
+    }
+
     public void deleteApplication(int applicationId){
+        Application application = applicationRepository.findById(applicationId).orElse(null);
+        Dog dog = dogService.getDogById(application.getDog().getId());
+
+        dog.setAdoptionStatus("Open");
+
         applicationRepository.deleteById(applicationId);
     }
 

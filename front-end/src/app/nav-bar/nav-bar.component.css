@@ -1,0 +1,40 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: transparent;
+}
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Adjust the height as needed */
+}
+
+.logo-item {
+    margin-right: auto; /* Push the logo to the left */
+}
+
+li.nav-item {
+    display: inline;
+    margin-right: 15px;
+}
+
+a.nav-link {
+    text-decoration: none;
+    color: #000000;
+    font-size: large;
+}
+
+.logout-button {
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 20px; /* Adjust the border-radius as needed */
+    padding: 5px 15px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: auto; /* Push the logout button to the right */
+}
