@@ -1,6 +1,7 @@
-/* .form-container {
+.form-container {
     width: 300px;
     margin: 0 auto;
+    height: 350px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -27,15 +28,24 @@
   }
 
   .form-container button {
-    width: 100%;
+    width: 70%;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 10px;
   }
 
   .toggle-button {
+    margin-top: 0px;
+    color: #007bff;
+    align-self: center;
+    width: 19%;
     margin-top: 10px;
-  } */
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 40.5%;
+  } 

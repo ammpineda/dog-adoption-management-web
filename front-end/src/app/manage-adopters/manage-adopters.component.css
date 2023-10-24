@@ -1,0 +1,63 @@
+
+.search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 5px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .search-bar label {
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+
+  .adopter-table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+  
+  .adopter-table th, .adopter-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .adopter-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .adopter-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  
+  button {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
