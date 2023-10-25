@@ -1,4 +1,4 @@
-<form (ngSubmit)="onRegisterSubmit" class="login-container">
+<form class="login-container">
   <div class="form-container">
     <div class="header-container">
       <img src="assets/icons/Group 2.png" alt="Dog Owner Image" style="margin: -4px; height: 60px">
@@ -32,7 +32,7 @@
       <input type="text" id="homeAddress" name="homeAddress" [(ngModel)]="adopter.homeAddress" required>
     </div>
     <div class="center-align">
-      <button type="submit">Register</button>
+      <button type="submit" (click)="onRegisterSubmit()">Register</button>
       <button type="button" [routerLink]="['/login']">Back</button>
     </div>
   </div>

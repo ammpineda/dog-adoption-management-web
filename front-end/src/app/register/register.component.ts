@@ -22,17 +22,22 @@ export class RegisterComponent {
     }
   }
   
+  onSubmit(){
+    alert("WOrking")
+  }
   onRegisterSubmit(){
     this.http.post('http://localhost:18080/api/adopter/register-adopter', this.adopter, { responseType: 'text' }).subscribe(
       (response: string) => {
         this.registerMessage = response;
         if (response === 'Registration successful') {
+          console.log('Response:', response);
           this.router.navigate(['/login']);
-          alert("Success.")
+          alert("Registered Successfully.")
         }
       },
       (error) => {
         this.registerMessage = 'Registration failed';
+        console.error('Error:', error);
         alert("Failed.")
       }
     );
