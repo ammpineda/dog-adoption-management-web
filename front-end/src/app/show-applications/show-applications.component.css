@@ -1,0 +1,50 @@
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    margin-bottom:200px;
+  }
+  
+  .table-container {
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 10px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .custom-table th {
+    background-color: #C05E4B;
+    color: #fff;
+  }
+  
+  .custom-table tbody tr {
+    cursor: pointer;
+  }
+  
+  .custom-table tbody tr:hover {
+    background-color: #eee;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .header-container img {
+    margin-right: 10px;
+  }
+  

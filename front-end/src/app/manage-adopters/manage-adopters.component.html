@@ -1,5 +1,10 @@
-<div class="search-bar">
-    <input type="text" placeholder="Search by" [(ngModel)]="searchQuery"/>
+<div class="header-img">
+  <img src="assets/icons/MANAGE ADOPTERS.png" style = "margin:15px;height:30px;">
+</div>
+<div class="centered">
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search by" [(ngModel)]="searchQuery" class="rounded-input"/>
     <label>
       <input type="radio" [(ngModel)]="filterType" [value]="'fullName'" />
       Name
@@ -12,26 +17,27 @@
       <input type="radio" [(ngModel)]="filterType" [value]="'phoneNumber'" />
       Phone Number
     </label>
-    <button (click)="applyFilter()">Search</button>
+    <button (click)="applyFilter()" class="search-button">Search</button>  <button (click)="navigateToAddAdopter()" class="add-button">Add Adopter</button>
   </div>
-  
-  <h2>List of Adopters</h2>
-  <table class="adopter-table">
+</div>
+
+
+<div class="table-container">
+  <table class="dog-table">
+    <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
       <th>Phone Number</th>
-      <th>Actions</th>
     </tr>
-    <tr *ngFor="let adopter of adopters">
+    </thead>
+    <tbody>
+    <tr *ngFor="let adopter of adopters" (click)="navigateToAdopterDetails(adopter)">
       <td>{{ adopter.fullName }}</td>
       <td>{{ adopter.email }}</td>
       <td>{{ adopter.phoneNumber }}</td>
-      <td>
-        <button (click)="navigateToAdopterDetails(adopter)">Update Details</button>
-      </td>
     </tr>
+  </tbody>
   </table>
-  <button (click)="navigateToAddAdopter()">Add Adopter</button>
-  
+</div>
   

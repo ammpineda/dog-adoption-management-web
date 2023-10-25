@@ -1,33 +1,37 @@
-<h2>Application Details</h2>
+<div class="header-container">
+  <img src="assets/icons/MY APPLICATIONS.png"style="margin-top: 35px; margin-bottom: 35px; height: 40px">
+</div>
 
-<table class="table">
-  <tbody>
-    <tr>
-      <th>ID</th>
-      <th>Status</th>
-      <th>Submitted Date</th>
-      <th>Review Date</th>
-      <th>Approval Date</th>
-      <th>Dog Name</th>
-      <th>Dog Breed</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th> </th>
-    </tr>
-    <tr *ngFor="let application of applications">
-      <td>{{ application.id }}</td>
-      <td>{{ application.status }}</td>
-      <td>{{ application.submittedDate | date:'short' }}</td>
-      <td>{{ application.reviewDate | date:'short' }}</td>
-      <td>{{ application.approvalDate | date:'short' }}</td>
-      <td>{{ application.dog.name }}</td>
-      <td>{{ application.dog.breed }}</td>
-      <td>{{ application.dog.age }} months</td>
-      <td>{{ application.dog.gender }}</td>
-      <td>
-        <a [routerLink]="['/show-application-details', application.id]">View Details</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+<div class="centered">
+  
+  <div class="table-container">
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Status</th>
+          <th>Submitted Date</th>
+          <th>Review Date</th>
+          <th>Approval Date</th>
+          <th>Dog Name</th>
+          <th>Dog Breed</th>
+          <th>Age</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let application of applications" [routerLink]="['/show-application-details', application.id]">
+          <td>{{ application.id }}</td>
+          <td>{{ application.status }}</td>
+          <td>{{ application.submittedDate | date:'short' }}</td>
+          <td>{{ application.reviewDate | date:'short' }}</td>
+          <td>{{ application.approvalDate | date:'short' }}</td>
+          <td>{{ application.dog.name }}</td>
+          <td>{{ application.dog.breed }}</td>
+          <td>{{ application.dog.age }} months</td>
+          <td>{{ application.dog.gender }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

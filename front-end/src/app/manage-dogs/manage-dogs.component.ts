@@ -38,7 +38,10 @@ export class ManageDogsComponent implements OnInit {
   }
 
   applyFilter() {
-    if (this.filterType === 'name') {
+    if (this.searchQuery == '' || null){
+      window.location.reload();
+    }
+    else if (this.filterType === 'name') {
       this.getDogsByName(this.searchQuery);
     } else if (this.filterType === 'gender') {
       this.getDogsByGender(this.searchQuery);

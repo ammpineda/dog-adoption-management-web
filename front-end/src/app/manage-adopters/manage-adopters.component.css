@@ -1,63 +1,90 @@
-
 .search-bar {
-    margin-bottom: 20px;
-  }
-  
-  .search-bar input[type="text"] {
-    padding: 5px;
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  
-  .search-bar label {
-    margin-right: 10px;
-  }
-  
-  .search-bar button {
-    padding: 5px 10px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
 
-  .adopter-table {
-    border-collapse: collapse;
-    width: 90%;
-  }
-  
-  .adopter-table th, .adopter-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .adopter-table th {
-    background-color: #f2f2f2;
-  }
-  
-  .adopter-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  
-  button {
-    margin-top: 1%;
-    margin-bottom: 1%;
-    padding: 5px 10px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+.rounded-input {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  width: 200px;
+}
+
+.search-bar label {
+  margin-right: 10px;
+  color: #333;
+}
+
+.search-button, .add-button {
+  background-color: #C05E4B;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.add-button {
+  background-color: #6ABE45;
+}
+
+.table-container {
+  background-color: #f3f3f3;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto; /* Center the table container */
+  width: 70%; /* Adjust the width as needed */
+  margin-bottom: 50px;
+}
+
+.dog-table {
+  border-collapse: collapse;
+  width: 100%; /* Adjust the width as needed */
+}
+
+.dog-table th,
+.dog-table td {
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dog-table th {
+  background-color: #C05E4B;
+  color: #fff;
+}
+
+.dog-table td {
+  text-align: left; /* Align table data to the left */
+}
+
+.dog-table tbody tr {
+  cursor: pointer;
+}
+
+.dog-table tbody tr:hover {
+  background-color: #eee;
+}
+
+.header-img{
+  display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
