@@ -38,13 +38,13 @@ public class AuthenticateController {
     @PostMapping("/api/adopter/login")
     public ResponseEntity<LoginResponse> loginAsAdopter(@RequestBody LoginRequest user) {
         Adopter confirmUser = adopterService.getUserByEmail(user.getEmail());
-        Adopter confirmPass = adopterService.getUserByPassword(user.getPassword());
 
-        if (confirmUser != null && confirmPass != null) {
-            int userId = confirmUser.getId(); // Get the user's ID
+        if (confirmUser != null && confirmUser.getPassword().equals(user.getPassword())) {
+            int userId = confirmUser.getId();
             return ResponseEntity.ok(new LoginResponse(userId, "Login successful"));
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new LoginResponse(0, "Login failed"));
         }
     }
+
 }
