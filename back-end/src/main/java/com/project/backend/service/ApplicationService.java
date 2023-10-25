@@ -39,6 +39,8 @@ public class ApplicationService {
 
     public Application updateApplication(int applicationId, Application update){
         Optional<Application> existingOptional = applicationRepository.findById(applicationId);
+        Application application = applicationRepository.findById(applicationId).orElse(null);
+        Dog dog = dogService.getDogById(application.getDog().getId());
 
         if(existingOptional.isPresent()){
             Application existing = existingOptional.get();
@@ -55,7 +57,7 @@ public class ApplicationService {
             if (update.getApprovalDate()!=null){
                 existing.setApprovalDate(update.getApprovalDate());
             } else if (update.getStatus().trim().equalsIgnoreCase("Approved")){
-                existing.getDog().setAdoptionStatus("Adopted");
+                dog.setAdoptionStatus("Adopted");
                 LocalDateTime currentDateTime = LocalDateTime.now();
                 existing.setApprovalDate(currentDateTime);
             }
@@ -65,9 +67,7 @@ public class ApplicationService {
             if (update.getDog()!=null){
                 existing.setDog(update.getDog());
             }
-
-
-
+            existing.setDog(dog);
             return applicationRepository.save(existing);
         }else{
             return null;

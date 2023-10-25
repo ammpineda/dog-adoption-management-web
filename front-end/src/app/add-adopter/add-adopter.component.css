@@ -1,0 +1,67 @@
+.box-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+    width: 40%; 
+    margin: 0 auto; 
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+  
+  .dog-form {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="file"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  button {
+    background-color: #C05E4B;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto; /* Center the button horizontally */
+    margin-right: 5px;
+  }
+  
+  button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .header-img{
+    display:flex;
+      justify-content:center;
+      align-items: center;
+  }
+  

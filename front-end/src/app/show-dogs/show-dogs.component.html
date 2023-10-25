@@ -10,9 +10,11 @@
     <div class="dog-details">
       <h3>{{ dog.name }}</h3>
       <div class="dog-info">
-        <p class="dog-detail" [ngClass]="{'reserved': dog.adoptionStatus === 'Reserved'}" 
-          (click)="dog.adoptionStatus === 'Open' ? navigateToDogDetails(dog) : null" style="margin-top: 10px;">
-          {{ dog.adoptionStatus === 'Reserved' ? 'Reserved' : (dog.adoptionStatus === 'Adopted' ? 'ADOPTED' : 'Check Details') }}
+        <p class="dog-detail"
+        [ngClass]="{'reserved': dog.adoptionStatus === 'Reserved' || dog.adoptionStatus === 'Adopted'}"
+          (click)="dog.adoptionStatus === 'Open' ? navigateToDogDetails(dog) : null"
+          style="margin-top: 10px;">
+          {{ dog.adoptionStatus === 'Reserved' ? 'Reserved' : (dog.adoptionStatus === 'Adopted' ? 'Adopted' : 'Check Details') }}
         </p>
 
       </div>

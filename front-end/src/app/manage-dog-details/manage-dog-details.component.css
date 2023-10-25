@@ -1,46 +1,56 @@
-h2{
-    margin-left: 1%;
+.box-container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 600px; /* Adjust the width as needed */
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 50px;
 }
-.dog-details {
-    display: flex;
+
+
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+
+.dog-image {
+  border-radius:20px;
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #A14839;
+}
+
+.dog-info {
+  text-align: left;
+  padding: 10px;
+}
+
+button {
+  background-color: #C05E4B;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #A14839;
+}
+
+.header-img{
+  display:flex;
+    justify-content:center;
     align-items: center;
-    padding: 2%;
-    background-color: antiquewhite;
-  }
-  
-  .dog-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin-right: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .dog-info {
-    flex: 1;
-  }
-  
-  .dog-info input, .dog-info textarea {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-  
- 
-  button {
-    padding: 5px 10px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+}

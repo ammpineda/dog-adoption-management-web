@@ -21,8 +21,8 @@
     </form>
 
     <form *ngIf="!switchLoginForm" (ngSubmit)="onAdminLoginSubmit()">
-      <img src="assets/icons/icons8-dog-heart-100.png" alt="Dog Owner Image" style = "margin:-4px; height:60px">
-      <h2>WELCOME</h2>
+      <img src="assets/icons/icons8-dog-heart-100.png" alt="Dog Owner Image" style = "margin:-4px; height:60px"><br>
+      <img src="assets/icons/Group 3.png" style = "margin-top:25px; margin-bottom: -10px; height:60px">
       <div>
         <label for="email">Email:</label>
         <input type="text" id="email" name="email" [(ngModel)]="loginRequest.email" required>

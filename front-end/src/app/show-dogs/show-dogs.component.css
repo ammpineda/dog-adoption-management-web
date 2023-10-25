@@ -54,11 +54,16 @@ h3 {
 
 .dog-detail {
   display: none;
-  background: #333;
+  background: #74af70;
   color: #fff;
   padding: 5px;
   cursor: pointer;
 }
+
+.reserved {
+  background: rgb(216, 109, 109);
+}
+
 
 .dog-box:hover .dog-detail {
   display: block;

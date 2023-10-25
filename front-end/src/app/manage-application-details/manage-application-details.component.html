@@ -1,98 +1,97 @@
-<h2>Adopter Details</h2>
-<div class="adopter-details">
-    <img [src]="'assets/user-displayimages/' + applicant.displayImage" alt="{{ applicant.fullName }}" class="adopter-image">
+<div class="header-img">
+  <img src="assets/icons/MANAGE APPLICATION DETAILS.png" style = "margin:15px;height:30px;">
+</div>
+
+<div class="details-container">
+  <div class="adopter-details box-container">
+    <p style="text-align: center;">
+      <img [src]="'assets/user-displayimages/' + applicant.displayImage" alt="{{ applicant.fullName }}" class="adopter-image"
+        style="height: 200px; width: 200px; border-radius: 20px;">
+    </p>
     <div class="adopter-info">
-
-        <p>
-            Name:
-            <input [(ngModel)]="applicant.fullName" [disabled]="true" />
-        </p>
-        <p>
-            Email Address:
-            <input [(ngModel)]="applicant.email" [disabled]="true" />
-        </p>
-        <p>
-            Phone Number:
-            <input [(ngModel)]="applicant.phoneNumber" [disabled]="true" />
-        </p>
-        <p>
-            Home Address:
-            <textarea [(ngModel)]="applicant.homeAddress" [disabled]="true"></textarea>
-        </p>
+      <h2>Adopter Details</h2>
+      <p>
+        <strong>Name:</strong> {{applicant.fullName}}
+      </p>
+      <p>
+        <strong>Email Address:</strong> {{applicant.email}}
+      </p>
+      <p>
+        <strong>Phone Number:</strong> {{applicant.phoneNumber}}
+      </p>
+      <p>
+        <strong>Home Address:</strong> {{applicant.homeAddress}}
+      </p>
+      <p>
+        <strong>Date Registered:</strong> {{applicant.registeredDate}}
+      </p>
     </div>
-</div>
-
-<h2>Dog Details</h2>
-<div class="dog-details">
-  <img [src]="'assets/dog-displayimages/' + dog.displayImage" alt="{{ dog.name }}" class="dog-image">
-  <div class="dog-info">
-    <p>
-      Name:
-      <input [(ngModel)]="dog.name" [disabled]="true"/>
-    </p>
-    <p>
-      Gender:
-      <input [(ngModel)]="dog.gender" [disabled]="true"/>
-    </p>
-    <p>
-      Breed:
-      <input [(ngModel)]="dog.breed" [disabled]="true"/>
-    </p>
-    <p>
-      Age:
-      <input [(ngModel)]="dog.age" [disabled]="true"/>
-      months
-    </p>
-    <p>
-      Adoption Status:
-      <input [(ngModel)]="dog.adoptionStatus" disabled/>
-    </p>
-    <p>
-      Birth Date:
-      <input [(ngModel)]="dog.birthDate" disabled/>
-    </p>
-    <p>
-      Color:
-      <input [(ngModel)]="dog.color" disabled />
-    </p>
-    <p>
-      Size:
-      <input [(ngModel)]="dog.size" disabled/>
-    </p>
-    <p>
-      Description:
-      <textarea [(ngModel)]="dog.description" disabled></textarea>
-    </p>
   </div>
-</div>
 
-<h2>Application Details</h2>
-<div class="application-details">
-  <div class="application-info">
-    <p>
-      Status:
-      <select [(ngModel)]="selectedApplication.status" [disabled]="!editMode">
-        <option *ngFor="let option of statusOptions" [ngValue]="option">{{ option }}</option>
-      </select>
+  <div class="dog-details box-container">
+    <p style="text-align: center;">
+      <img [src]="'assets/dog-displayimages/' + dog.displayImage" alt="{{ dog.name }}" class="dog-image"
+        style="height: 200px; width: 300px; border-radius: 20px;">
     </p>
-    <p>
-      Date Submitted:
-      <input type="datetime-local" [(ngModel)]="selectedApplication.submittedDate" [disabled]="!editMode"/>
-    </p>
-    <p>
-      Date Reviewed:
-      <input type="datetime-local" [(ngModel)]="selectedApplication.reviewDate" [disabled]="!editMode"/>
-    </p>
-    <p>
-      Date Approved:
-      <input type="datetime-local" [(ngModel)]="selectedApplication.approvalDate" [disabled]="!editMode"/>
-    </p>
-    <div>
-        <button *ngIf="editMode" (click)="saveChanges()">Save Changes</button>
-        <button (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
-        <button (click)="deleteRecord()">Delete</button>
+    <div class="dog-info">
+      <h2>Dog Details</h2>
+      <p>
+        <strong>Name:</strong> {{dog.name}}
+      </p>
+      <p>
+        <strong>Gender:</strong> {{dog.gender}}
+      </p>
+      <p>
+        <strong>Breed:</strong> {{dog.breed}}
+      </p>
+      <p>
+        <strong>Age:</strong> {{dog.age}} months
+      </p>
+      <p>
+        <strong>Adoption Status:</strong> {{dog.adoptionStatus}}
+      </p>
+      <p>
+        <strong>Birth Date:</strong> {{dog.birthDate}}
+      </p>
+      <p>
+        <strong>Color:</strong> {{dog.color}}
+      </p>
+      <p>
+        <strong>Size:</strong> {{dog.size}}
+      </p>
+      <p>
+        <strong>Description:</strong> {{dog.description}}
+      </p>
+    </div>
+  </div>
+
+  <div class="application-details box-container app-container">
+    <h2 style="margin-top: -5px; margin-bottom: 20px;">Application Details</h2>
+    <div class="application-info">
+      <p>
+        Status:
+        <select [(ngModel)]="selectedApplication.status" [disabled]="!editMode" style="width: 200px;">
+          <option *ngFor="let option of statusOptions" [ngValue]="option">{{ option }}</option>
+        </select>
+      </p>
+      <p>
+        Date Submitted:
+        <input type="datetime-local" [(ngModel)]="selectedApplication.submittedDate" [disabled]="!editMode" style="width: 100%;">
+      </p>
+      <p>
+        Date Reviewed:
+        <input type="datetime-local" [(ngModel)]="selectedApplication.reviewDate" [disabled]="!editMode" style="width: 100%;">
+      </p>
+      <p>
+        Date Approved:
+        <input type="datetime-local" [(ngModel)]="selectedApplication.approvalDate" [disabled]="!editMode" style="width: 100%;">
+      </p>
+      <div class="button-container">
+        <button *ngIf="editMode" (click)="saveChanges()" class="action-button">Save Changes</button>
+        <button (click)="toggleEditMode()" class="action-button">{{ editMode ? 'Cancel' : 'Edit' }}</button>
+        <button (click)="deleteRecord()" class="action-button">Delete</button>
+        <button routerLink="/manage-applications" class="action-button">Back</button>
+      </div>
     </div>
   </div>
 </div>
-
-<button routerLink="/manage-applications">Back</button>

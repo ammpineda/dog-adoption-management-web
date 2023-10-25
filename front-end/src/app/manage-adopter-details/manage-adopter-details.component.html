@@ -1,44 +1,38 @@
-<h2>  <button routerLink="/manage-adopters">Back</button>Adopter Details  </h2>
-
-<div class="adopter-details">
-    
-    <img [src]="'assets/user-displayimages/' + selectedAdopter.displayImage" alt="{{ selectedAdopter.fullName }}" class="adopter-image">
-    <div class="adopter-info">
-
-        <p>
-            First Name:
-            <input [(ngModel)]="selectedAdopter.firstName" [disabled]="!editMode" />
-        </p>
-        <p>
-            Last Name:
-            <input [(ngModel)]="selectedAdopter.lastName" [disabled]="!editMode" />
-        </p>
-        <p>
-            Display Image:
-            <input type="file" [(ngModel)]="newDisplayImage" (change)="onFileSelected($event)" [disabled]="!editMode" />
-        </p>
-        <p>
-            Email Address:
-            <input [(ngModel)]="selectedAdopter.email" [disabled]="!editMode" />
-        </p>
-        <p>
-            Password:
-            <input [(ngModel)]="selectedAdopter.password" [disabled]="!editMode" />
-        </p>
-        <p>
-            Phone Number:
-            <input [(ngModel)]="selectedAdopter.phoneNumber" [disabled]="!editMode" />
-        </p>
-        <p>
-            Home Address:
-            <textarea [(ngModel)]="selectedAdopter.homeAddress" [disabled]="!editMode"></textarea>
-        </p>
-        <div>
-            <button *ngIf="editMode" (click)="saveChanges()">Save Changes</button>
-            <button (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
-            <button (click)="deleteRecord()">Delete</button>
-          </div>
-    </div>
+<div class="header-img">
+  <img src="assets/icons/MANAGE ADOPTER DETAILS.png" style = "margin:25px;height:30px;">
 </div>
 
-
+<div class="box-container">
+  <div class="adopter-details">
+    <img [src]="'assets/user-displayimages/' + selectedAdopter.displayImage" alt="{{ selectedAdopter.fullName }}" class="adopter-image">
+    <div class="adopter-info">
+      <p>
+        <strong>First Name:</strong> <input [(ngModel)]="selectedAdopter.firstName" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Last Name:</strong> <input [(ngModel)]="selectedAdopter.lastName" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Display Image:</strong> <input type="file" [(ngModel)]="newDisplayImage" (change)="onFileSelected($event)" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Email Address:</strong> <input [(ngModel)]="selectedAdopter.email" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Password:</strong> <input [(ngModel)]="selectedAdopter.password" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Phone Number:</strong> <input [(ngModel)]="selectedAdopter.phoneNumber" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Home Address:</strong> <textarea [(ngModel)]="selectedAdopter.homeAddress" [disabled]="!editMode" style="width: 100%;"></textarea>
+      </p>
+      <div>
+        <button *ngIf="editMode" (click)="saveChanges()">Save Changes</button>
+        <button (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
+        <button (click)="deleteRecord()">Delete</button>
+        <button routerLink="/manage-adopters">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
