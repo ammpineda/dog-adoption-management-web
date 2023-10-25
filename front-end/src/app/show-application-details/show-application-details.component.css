@@ -65,3 +65,16 @@ img{
     background-color: antiquewhite;
     border-radius: 10px;
   }
+  button{
+    background-color: #C05E4B;
+    color: white;
+    padding: 5px;
+    width:100px;
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }

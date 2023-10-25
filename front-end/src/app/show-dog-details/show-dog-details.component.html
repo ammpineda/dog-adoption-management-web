@@ -1,8 +1,17 @@
-<h2>Dog Details</h2>
+
+
 <div class="dog-details">
-  <img [src]="'assets/dog-displayimages/' + selectedDog.displayImage" alt="{{ selectedDog.name }}" class="dog-image">
+  
+    <h1><strong>Dog Details <button routerLink="/show-dogs">back</button>
+    </strong></h1> 
   <div class="dog-info">
     <h3>{{ selectedDog.name }}</h3>
+    <div class="pics">
+    <img [src]="'assets/dog-displayimages/' + selectedDog.displayImage" alt="{{ selectedDog.name }}" class="dog-image">
+  </div>
+
+    <div class="other">
+
     <p>Gender: {{ selectedDog.gender }}</p>
     <p>Breed: {{ selectedDog.breed }}</p>
     <p>Age: {{ selectedDog.age }} months</p>
@@ -10,10 +19,11 @@
     <p>Birth Date: {{ selectedDog.birthDate | date:'shortDate' }}</p>
     <p>Color: {{ selectedDog.color }}</p>
     <p>Size: {{ selectedDog.size }}</p>
-    <p>Description: {{ selectedDog.description }}</p>
+    <p class="description">Description: {{ selectedDog.description }}</p>
+    <button (click)="adoptDog(selectedDog)" >Submit Application</button>
+    </div>
     
-    <button (click)="adoptDog(selectedDog)">Submit Application</button>
   </div>
 </div>
 
-<button routerLink="/show-dogs">Back</button>
+

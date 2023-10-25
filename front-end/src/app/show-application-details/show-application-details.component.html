@@ -1,13 +1,15 @@
 
 <div class="dog-details">
-  <h1><strong>Dog Details</strong></h1>
+  <h1><strong>Dog Details          </strong><button routerLink="/show-applications">Back</button></h1>
   
    
   <div class="dog-info">
     <h3>{{ selectedDog.name }}</h3>
     <div class="pics">
     <img [src]="'assets/dog-displayimages/' + selectedDog.displayImage" alt="{{ selectedDog.name }}" class="dog-image">
-    </div>
+  </div>
+
+    
     <div class="other">
     
     <p>Gender: {{ selectedDog.gender }}</p>
@@ -22,4 +24,4 @@
   </div>
 </div>
 
-<button routerLink="/show-applications">Back</button>
+
