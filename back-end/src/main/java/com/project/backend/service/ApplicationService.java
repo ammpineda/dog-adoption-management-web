@@ -55,6 +55,7 @@ public class ApplicationService {
             if (update.getApprovalDate()!=null){
                 existing.setApprovalDate(update.getApprovalDate());
             } else if (update.getStatus().trim().equalsIgnoreCase("Approved")){
+                existing.getDog().setAdoptionStatus("Adopted");
                 LocalDateTime currentDateTime = LocalDateTime.now();
                 existing.setApprovalDate(currentDateTime);
             }

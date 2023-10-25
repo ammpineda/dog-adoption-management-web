@@ -1,14 +1,21 @@
-<h2>List of Dogs</h2>
+<div class="centered">
+  <img src="assets/icons/showDogs.png" style="width: 500px">
+</div>
+
 <div class="dog-containers">
   <div class="dog-box" *ngFor="let dog of dogs">
-    <img [src]="'assets/dog-displayimages/' + dog.displayImage" alt="{{ dog.name }}" class="dog-image dog-image-container">
-    <div class="dog-info">
+    <div class="dog-image-container">
+      <img [src]="'assets/dog-displayimages/' + dog.displayImage" alt="{{ dog.name }}" class="dog-image">
+    </div>
+    <div class="dog-details">
       <h3>{{ dog.name }}</h3>
-      <p>Gender: {{ dog.gender }}</p>
-      <p>Breed: {{ dog.breed }}</p>
-      <p>Age: {{ dog.age }} months</p>
-      <p>Adoption Status: {{ dog.adoptionStatus }}</p>
-      <button *ngIf="dog.adoptionStatus === 'Open'" (click)="navigateToDogDetails(dog)">Check Details</button>
+      <div class="dog-info">
+        <p class="dog-detail" [ngClass]="{'reserved': dog.adoptionStatus === 'Reserved'}" 
+          (click)="dog.adoptionStatus === 'Open' ? navigateToDogDetails(dog) : null" style="margin-top: 10px;">
+          {{ dog.adoptionStatus === 'Reserved' ? 'Reserved' : (dog.adoptionStatus === 'Adopted' ? 'ADOPTED' : 'Check Details') }}
+        </p>
+
+      </div>
     </div>
   </div>
 </div>

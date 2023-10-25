@@ -1,40 +1,43 @@
-<div class="form-container">
-  <form *ngIf="switchLoginForm" (ngSubmit)="onLoginSubmit()">
-    <h2>User Login</h2>
-    <div>
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" [(ngModel)]="loginRequest.email" required>
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="loginRequest.password" required>
-    </div>
-    <div>
-      <button type="submit">Login</button>
-    </div>
-    <div>
-      <button type="button" (click)="goToRegister()">Register</button>
-    </div>
-  </form>
+<div class="login-container">
+  <div class="form-container">
+    <form *ngIf="switchLoginForm" (ngSubmit)="onLoginSubmit()">
+      <img src="assets/icons/icons8-dog-heart-100.png" alt="Dog Owner Image" style = "margin:-4px; height:60px"><br>
+      <img src="assets/icons/Group 3.png" style = "margin-top:25px; margin-bottom: -10px; height:60px">
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" [(ngModel)]="loginRequest.email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="loginRequest.password" required>
+      </div>
+      <div style="margin:10px;">
+        <a (click)="toggleFormVisibility()">{{ switchLoginForm ? 'Are you an Admin? Sign in here' : 'Are you an Adopter? Sign in here' }}</a>
+      </div>
+      <div>
+        <button type="submit">LOGIN</button>  <button type="button" (click)="goToRegister()">REGISTER</button>
+      </div>
+      
+    </form>
 
-  <form *ngIf="!switchLoginForm" (ngSubmit)="onAdminLoginSubmit()">
-    <h2>Admin Login</h2>
-    <div>
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" [(ngModel)]="loginRequest.email" required>
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="loginRequest.password" required>
-    </div>
-    <div>
-      <button type="submit">Login</button>
-    </div>
-  </form>
-</div>
-
-<button class="toggle-button" (click)="toggleFormVisibility()">{{ switchLoginForm ? 'Sign as Admin' : 'Sign as User' }}</button>
-
-<div *ngIf="loginMessage">
-  {{ loginMessage }}
+    <form *ngIf="!switchLoginForm" (ngSubmit)="onAdminLoginSubmit()">
+      <img src="assets/icons/icons8-dog-heart-100.png" alt="Dog Owner Image" style = "margin:-4px; height:60px">
+      <h2>WELCOME</h2>
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" [(ngModel)]="loginRequest.email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="loginRequest.password" required>
+      </div>
+      <div style="margin:10px;">
+        <a (click)="toggleFormVisibility()">{{ switchLoginForm ? 'Are you an Admin? Sign in here' : 'Are you an Adopter? Sign in here' }}</a>
+      </div>
+      <div>
+        <button type="submit">LOGIN</button>
+      </div>
+      
+    </form>
+  </div>
 </div>

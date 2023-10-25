@@ -24,6 +24,8 @@ import { ManageDogDetailsComponent } from './manage-dog-details/manage-dog-detai
 import { ManageAdopterDetailsComponent } from './manage-adopter-details/manage-adopter-details.component';
 import { AddAdopterComponent } from './add-adopter/add-adopter.component';
 import { ManageApplicationDetailsComponent } from './manage-application-details/manage-application-details.component';
+import { SupportPageComponent } from './support-page/support-page.component';
+import { ManageProfileComponent } from './manage-profile/manage-profile.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { ManageApplicationDetailsComponent } from './manage-application-details/
     ManageDogDetailsComponent,
     ManageAdopterDetailsComponent,
     AddAdopterComponent,
-    ManageApplicationDetailsComponent
+    ManageApplicationDetailsComponent,
+    SupportPageComponent,
+    ManageProfileComponent
   ],
   imports: [
     BrowserModule,

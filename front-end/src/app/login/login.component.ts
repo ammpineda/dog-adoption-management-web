@@ -31,7 +31,7 @@ export class LoginComponent {
             this.authService.setUserId(response.userId);
           }
 
-          alert("Success" + response.userId)
+          alert("Signed in successfully.")
         }
       },
       (error) => {

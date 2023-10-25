@@ -11,11 +11,12 @@ ul.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px; /* Adjust the height as needed */
+    height: 60px; 
 }
 
 .logo-item {
-    margin-right: auto; /* Push the logo to the left */
+    margin-right: auto; 
+    margin-top: -5px;
 }
 
 li.nav-item {
@@ -23,18 +24,22 @@ li.nav-item {
     margin-right: 15px;
 }
 
+
 a.nav-link {
     text-decoration: none;
-    color: #000000;
     font-size: large;
 }
 
+.button {
+    color:black;
+}
+
 .logout-button {
-    background-color: transparent;
-    border: 1px solid #000000;
-    border-radius: 20px; /* Adjust the border-radius as needed */
+    background-color: #C05E4B; 
+    border: 1px solid #C05E4B; 
+    border-radius: 20px; 
     padding: 5px 15px;
-    color: #000000;
+    color: #FFFFFF; 
     text-decoration: none;
-    margin-left: auto; /* Push the logout button to the right */
+    margin-left: auto;
 }

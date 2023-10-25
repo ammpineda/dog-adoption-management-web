@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit{
   isUserLoggedIn: boolean = false;
   isConnected: boolean = false;
 
-  constructor(private route: Router, private http:HttpClient, private authService: AuthService){}
+  constructor(private router: Router, private http:HttpClient, private authService: AuthService){}
 
   ngOnInit() {
     this.authService.getIsAdminLoggedIn().subscribe((value) => {
@@ -35,6 +35,7 @@ export class NavBarComponent implements OnInit{
     this.authService.setIsConnected(false);
     this.authService.setIsAdminLoggedIn(false);
     this.authService.setIsUserLoggedIn(false);
+    this.router.navigate(['/home-page']); 
   }
 
 }

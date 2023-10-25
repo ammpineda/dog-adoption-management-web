@@ -15,6 +15,9 @@ import { ManageAdopterDetailsComponent } from './manage-adopter-details/manage-a
 import { AddAdopterComponent } from './add-adopter/add-adopter.component';
 import { ManageApplicationsComponent } from './manage-applications/manage-applications.component';
 import { ManageApplicationDetailsComponent } from './manage-application-details/manage-application-details.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { SupportPageComponent } from './support-page/support-page.component';
+import { ManageProfileComponent } from './manage-profile/manage-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-page', pathMatch:'full'},
@@ -25,6 +28,7 @@ const routes: Routes = [
   { path: 'show-dog-details/:id', component: ShowDogDetailsComponent },
   { path: 'show-applications', component: ShowApplicationsComponent },
   { path: 'show-application-details/:id', component: ShowApplicationDetailsComponent },
+  { path: 'manage-profile', component: ManageProfileComponent },
   { path: 'manage-dogs', component: ManageDogsComponent },
   { path: 'manage-dog-details/:id', component: ManageDogDetailsComponent },
   { path: 'add-dog', component: AddDogComponent },
@@ -32,7 +36,9 @@ const routes: Routes = [
   { path: 'manage-adopter-details/:id', component: ManageAdopterDetailsComponent },
   { path: 'add-adopter', component: AddAdopterComponent },
   { path: 'manage-applications', component: ManageApplicationsComponent },
-  { path: 'manage-application-details/:id', component: ManageApplicationDetailsComponent }
+  { path: 'manage-application-details/:id', component: ManageApplicationDetailsComponent },
+  { path: 'about-page', component: AboutPageComponent },
+  { path: 'support-page', component: SupportPageComponent }
 
 ];
 
