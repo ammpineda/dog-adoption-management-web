@@ -1,5 +1,7 @@
 package com.project.backend.service;
 
+import com.project.backend.model.Adopter;
+import com.project.backend.model.Application;
 import com.project.backend.model.Dog;
 import com.project.backend.repository.DogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ import java.util.Optional;
 public class DogService {
     @Autowired
     DogRepository dogRepository;
+
+    @Autowired
+    ApplicationService applicationService;
 
     public Dog registerDog(Dog dog){
         dog.setRegisteredDate(new Date());
@@ -67,7 +72,17 @@ public class DogService {
         }
     }
 
-    public void deleteDog(int dogId) { dogRepository.deleteById(dogId); }
+    public void deleteDog(int dogId) {
+        Dog dog = dogRepository.findById(dogId).orElse(null);
+
+        Application application = dog.getApplication();
+
+        // Delete each associated application
+        if(application != null){
+                applicationService.deleteApplication(application.getId());
+        }
+        dogRepository.deleteById(dogId);
+    }
 
     public List<Dog> getAllDogs(){ return (List<Dog>) dogRepository.findAll(); }
 

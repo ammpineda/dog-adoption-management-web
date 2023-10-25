@@ -41,7 +41,7 @@ export class ManageAdoptersComponent implements OnInit {
     if (this.searchQuery == '' || null){
       window.location.reload();
     }
-    else if (this.filterType === 'name') {
+    else if (this.filterType === 'fullName') {
       this.getAdoptersByName(this.searchQuery);
     } else if (this.filterType === 'email') {
       this.getAdoptersByEmail(this.searchQuery);

@@ -2,6 +2,7 @@ package com.project.backend.service;
 
 import com.project.backend.model.Admin;
 import com.project.backend.model.Adopter;
+import com.project.backend.model.Application;
 import com.project.backend.repository.AdopterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ import java.util.Optional;
 public class AdopterService {
     @Autowired
     AdopterRepository adopterRepository;
+
+    @Autowired
+    ApplicationService applicationService;
 
     public Adopter registerAdopter(Adopter adopter){
         adopter.setFullName();
@@ -53,7 +57,21 @@ public class AdopterService {
             return null;
         }
     }
-    public void deleteAdopter(int adopterId) { adopterRepository.deleteById(adopterId); }
+    public void deleteAdopter(int adopterId) {
+        Adopter adopter = adopterRepository.findById(adopterId).orElse(null);
+
+        List<Application> applications = adopter.getApplications();
+
+        // Delete each associated application
+        if(applications != null && !applications.isEmpty()){
+            for (Application application : applications) {
+                applicationService.deleteApplication(application.getId());
+            }
+        }
+
+        adopterRepository.deleteById(adopterId);
+
+    }
     public List<Adopter> getAllAdopters(){ return (List<Adopter>) adopterRepository.findAll(); }
     public Adopter getAdopterById(int adopterId) {
         return adopterRepository.findById(adopterId).orElse(null);
