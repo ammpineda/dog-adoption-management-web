@@ -33,7 +33,7 @@
   </form>
 </div>
 
-<button class="toggle-button" (click)="toggleFormVisibility">{{ switchLoginForm ? 'Sign as Admin' : 'Sign as User' }}</button>
+<button class="toggle-button" (click)="toggleFormVisibility()">{{ switchLoginForm ? 'Sign as Admin' : 'Sign as User' }}</button>
 
 <div *ngIf="loginMessage">
   {{ loginMessage }}

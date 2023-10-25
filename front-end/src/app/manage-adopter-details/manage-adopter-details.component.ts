@@ -43,7 +43,8 @@ export class ManageAdopterDetailsComponent {
   saveChanges() {
     const updatedAdopter = {
       id: this.selectedAdopter.id,
-      fullName: this.selectedAdopter.fullName,
+      firstName: this.selectedAdopter.firstName,
+      lastName: this.selectedAdopter.lastName,
       displayImage: this.selectedAdopter.displayImage,
       email: this.selectedAdopter.email,
       password: this.selectedAdopter.password,

@@ -4,8 +4,12 @@
     <div class="adopter-info">
 
         <p>
-            Name:
-            <input [(ngModel)]="selectedAdopter.fullName" [disabled]="!editMode" />
+            First Name:
+            <input [(ngModel)]="selectedAdopter.firstName" [disabled]="!editMode" />
+        </p>
+        <p>
+            Last Name:
+            <input [(ngModel)]="selectedAdopter.lastName" [disabled]="!editMode" />
         </p>
         <p>
             Display Image:
