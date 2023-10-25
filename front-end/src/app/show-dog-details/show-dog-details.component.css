@@ -9,7 +9,7 @@ img{
 .dog-details {
     width: 1000px;
     margin: 0 auto;
-    height: 550px;
+    height: 600px;
     padding: 5px;
     background-color: #fff;
     border-radius: 10px;
@@ -36,6 +36,7 @@ img{
     box-shadow: 0 0 10px rgba(4, 4, 4, 0.2);
     font-family: 'Montserrat', sans-serif;
     text-align: left;
+    
   }
 
   .dog-info .pics{
@@ -65,17 +66,18 @@ img{
     background-color: antiquewhite;
     border-radius: 10px;
   }
-   .other button{
+   .dog-info button{
     background-color: #C05E4B;
     color: white;
     padding: 10px;
-    margin-bottom: 600px;
+   margin-top: 10px;
     width: 230px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    
   }
   button{
     background-color: #C05E4B;
@@ -89,4 +91,11 @@ img{
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 20px;
+ 
+  }
+  p{ 
+     font-weight: 900;
+    }
+  h3{
+    font-weight: 900;
   }
