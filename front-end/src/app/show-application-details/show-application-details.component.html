@@ -1,27 +1,20 @@
-
 <div class="dog-details">
-  <h1><strong>Dog Details          </strong><button routerLink="/show-applications">Back</button></h1>
-  
-   
+  <h1><strong>Dog Details          </strong> <button routerLink="/show-dogs">Back</button></h1>
   <div class="dog-info">
     <h3>{{ selectedDog.name }}</h3>
     <div class="pics">
-    <img [src]="'assets/dog-displayimages/' + selectedDog.displayImage" alt="{{ selectedDog.name }}" class="dog-image">
-  </div>
-
-    
-    <div class="other">
-    
-    <p>Gender: {{ selectedDog.gender }}</p>
-    <p>Breed: {{ selectedDog.breed }}</p>
-    <p>Age: {{ selectedDog.age }} months</p>
-    <p>Adoption Status: {{ selectedDog.adoptionStatus }}</p>
-    <p>Birth Date: {{ selectedDog.birthDate | date:'shortDate' }}</p>
-    <p>Color: {{ selectedDog.color }}</p>
-    <p>Size: {{ selectedDog.size }}</p>
-    <p class="description">Description: {{ selectedDog.description }}</p>
+      <img [src]="'assets/dog-displayimages/' + selectedDog.displayImage" alt="{{ selectedDog.name }}" class="dog-image">
     </div>
+    <div class="other">
+      <p><strong>Gender:</strong> {{ selectedDog.gender }}</p>
+      <p><strong>Breed:</strong> {{ selectedDog.breed }}</p>
+      <p><strong>Birth Date:</strong> {{ selectedDog.birthDate | date:'shortDate' }}</p>
+      <p><strong>Age:</strong> {{ selectedDog.age }} months</p>
+      <p><strong>Adoption Status:</strong> {{ selectedDog.adoptionStatus }}</p>
+      <p><strong>Color:</strong> {{ selectedDog.color }}</p>
+      <p><strong>Size:</strong> {{ selectedDog.size }}</p>
+      
+    </div>
+    <p class="description"><strong>Description:</strong> {{ selectedDog.description }}</p>
   </div>
 </div>
-
-
