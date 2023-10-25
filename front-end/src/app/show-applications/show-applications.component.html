@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let application of applications" [routerLink]="['/show-application-details', application.id]">
+        <tr *ngFor="let application of applications" [routerLink]="['/show-application-details', application.dog.id]">
           <td>{{ application.id }}</td>
           <td>{{ application.status }}</td>
           <td>{{ application.submittedDate | date:'short' }}</td>

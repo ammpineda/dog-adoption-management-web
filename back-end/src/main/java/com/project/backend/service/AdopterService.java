@@ -47,6 +47,7 @@ public class AdopterService {
             if(update.getHomeAddress()!=null){
                 existing.setHomeAddress(update.getHomeAddress());
             }
+            existing.setFullName();
             return adopterRepository.save(existing);
         } else{
             return null;
