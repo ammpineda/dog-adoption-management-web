@@ -13,7 +13,9 @@ public interface DogRepository extends CrudRepository<Dog, Integer> {
     @Query("SELECT a FROM Dog a WHERE CONCAT(a.name) LIKE %:name%")
     List<Dog> findByName(@Param("name") String name);
 
-    List<Dog> findByGender(String gender);
+    @Query("SELECT a FROM Dog a WHERE CONCAT(a.gender) LIKE %:gender%")
+    List<Dog> findByGender(@Param("gender") String gender);
 
-    List<Dog> findByAdoptionStatus(String adoptionStatus);
+    @Query("SELECT a FROM Dog a WHERE CONCAT(a.adoptionStatus) LIKE %:adoptionStatus%")
+    List<Dog> findByAdoptionStatus(@Param("adoptionStatus")String adoptionStatus);
 }
