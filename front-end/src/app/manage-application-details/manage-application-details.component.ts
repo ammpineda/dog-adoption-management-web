@@ -25,6 +25,18 @@ export class ManageApplicationDetailsComponent{
     });
   }
 
+  getStatusWarning(): string | null {
+    const selectedStatus = this.selectedApplication.status;
+
+    if (selectedStatus === 'Approved') {
+      return 'WARNING: Cannot revert to "Submitted" or "Under Review" if Application is already approved.';
+    } else if (selectedStatus === 'Under Review') {
+      return 'WARNING: Cannot revert to "Submitted" if Application is already under review.';
+    }
+
+    return null; // No warning message
+  }
+
   loadAdopterDetails(applicationId: string) {
     this.http.get<Application>(`http://localhost:18080/api/application/get-application/id/${applicationId}`).subscribe(
       (application: Application) => {

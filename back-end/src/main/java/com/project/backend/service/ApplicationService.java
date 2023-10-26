@@ -46,11 +46,18 @@ public class ApplicationService {
             Application existing = existingOptional.get();
 
             if (update.getStatus()!=null){
-                existing.setStatus(update.getStatus());
+                if(existing.getStatus().equalsIgnoreCase("Under Review" )&& update.getStatus().trim().equalsIgnoreCase("Submitted")){
+                    existing.setStatus("Under Review");
+                } else if (existing.getStatus().equalsIgnoreCase("Approved" )){
+                    existing.setStatus("Approved");
+                } else {
+                    existing.setStatus(update.getStatus());
+                }
             }
             if (update.getReviewDate()!=null){
                 existing.setReviewDate(update.getReviewDate());
             } else if (update.getStatus().trim().equalsIgnoreCase("Under Review")){
+                dog.setAdoptionStatus("Reserved");
                 LocalDateTime currentDateTime = LocalDateTime.now();
                 existing.setReviewDate(currentDateTime);
             }

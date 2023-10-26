@@ -69,21 +69,22 @@
     <h2 style="margin-top: -5px; margin-bottom: 20px;">Application Details</h2>
     <div class="application-info">
       <p>
-        Status:
+        <b>Status:</b>
         <select [(ngModel)]="selectedApplication.status" [disabled]="!editMode" style="width: 200px;">
           <option *ngFor="let option of statusOptions" [ngValue]="option">{{ option }}</option>
-        </select>
+        </select><br>
+        <span class="error-message" *ngIf="getStatusWarning()" style="color:red;">{{ getStatusWarning() }}</span>
       </p>
       <p>
-        Date Submitted:
+        <b>Date Submitted:</b>
         <input type="datetime-local" [(ngModel)]="selectedApplication.submittedDate" [disabled]="!editMode" style="width: 100%;">
       </p>
       <p>
-        Date Reviewed:
+        <b>Date Reviewed:</b>
         <input type="datetime-local" [(ngModel)]="selectedApplication.reviewDate" [disabled]="!editMode" style="width: 100%;">
       </p>
       <p>
-        Date Approved:
+        <b>Date Approved:</b>
         <input type="datetime-local" [(ngModel)]="selectedApplication.approvalDate" [disabled]="!editMode" style="width: 100%;">
       </p>
       <div class="button-container">
