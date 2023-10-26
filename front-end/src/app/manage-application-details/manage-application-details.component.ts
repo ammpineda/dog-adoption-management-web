@@ -34,7 +34,7 @@ export class ManageApplicationDetailsComponent{
       return 'WARNING: Cannot revert to "Submitted" if Application is already under review.';
     }
 
-    return null; // No warning message
+    return null;
   }
 
   loadAdopterDetails(applicationId: string) {
