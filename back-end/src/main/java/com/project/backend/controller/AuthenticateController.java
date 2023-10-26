@@ -26,9 +26,9 @@ public class AuthenticateController {
     public ResponseEntity<String> loginAsAdmin(@RequestBody LoginRequest user) {
 
         Admin confirmUser = adminService.getAdminByEmail(user.getEmail());
-        Admin confirmPass = adminService.getAdminByPassword(user.getPassword());
 
-        if (confirmUser != null && confirmPass != null) {
+        if (confirmUser != null && confirmUser.getPassword().equals(user.getPassword())) {
+            int userId = confirmUser.getId();
             return ResponseEntity.ok("Login successful");
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login failed");
