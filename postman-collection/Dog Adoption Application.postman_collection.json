@@ -1,0 +1,830 @@
+{
+	"info": {
+		"_postman_id": "424fa75c-bac4-4b01-a2eb-ac879e56af4f",
+		"name": "Dog Adoption Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28141266",
+		"_collection_link": "https://lively-resonance-31385.postman.co/workspace/Open-Workspace~14b8839e-4be0-494d-b51a-69e16c8d7181/collection/28141266-424fa75c-bac4-4b01-a2eb-ac879e56af4f?action=share&source=collection_link&creator=28141266"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "GetAdminByID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/admin/get-admin/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"admin",
+								"get-admin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllAdmins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/admin/all-admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"admin",
+								"all-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ofclmekarox@gmail.com\",\r\n    \"name\":\"Nicanor Pineda III\",\r\n    \"password\":\"080203\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/admin/register-admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"admin",
+								"register-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAdmin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/admin/delete-admin/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"admin",
+								"delete-admin",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAdminByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/admin/get-admin/email/kulitnick@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"admin",
+								"get-admin",
+								"email",
+								"kulitnick@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginAsAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"kulitnick@gmail.com\",\r\n    \"password\":\"080203\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Adopter",
+			"item": [
+				{
+					"name": "GetAllAdopters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/adopter/all-adopter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"adopter",
+								"all-adopter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAdopterById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/adopter/get-adopter/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"adopter",
+								"get-adopter",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAdopterByName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/adopter/get-adopter/name/a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"adopter",
+								"get-adopter",
+								"name",
+								"a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAdopterByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/adopter/get-adopter/email/childe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"adopter",
+								"get-adopter",
+								"email",
+								"childe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAdopterByPhone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/adopter/get-adopter/phone/0919",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"adopter",
+								"get-adopter",
+								"phone",
+								"0919"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterAdopter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Mei\",\r\n    \"lastName\":\"Kaslana\",\r\n    \"displayImage\":\"Kaslana.png\",\r\n    \"email\":\"kaslanamei@gmail.com\",\r\n    \"password\":\"kianaheartmei0316\",\r\n    \"phoneNumber\":\"09187245680\",\r\n    \"homeAddress\":\"Bonifacio Global City, Taguig\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/adopter/register-adopter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"adopter",
+								"register-adopter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAdopter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Andrea\",\r\n    \"lastName\":\"Pineda\",\r\n    \"displayImage\":\"N/A\",\r\n    \"email\":\"ofclmekarox@gmail.com\",\r\n    \"password\":\"pass\",\r\n    \"phoneNumber\":\"09190980201\",\r\n    \"homeAddress\":\"Tandang Sora, Quezon City\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/adopter/update-adopter/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"adopter",
+								"update-adopter",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAdopter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/adopter/delete-adopter/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"adopter",
+								"delete-adopter",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginAsAdopter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pinedaandreamaym@gmail.com\",\r\n    \"password\": \"pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/adopter/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"adopter",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dog",
+			"item": [
+				{
+					"name": "GetAllDogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/dog/all-dog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"dog",
+								"all-dog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDogById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/dog/get-dog/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"dog",
+								"get-dog",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDogsByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/dog/get-dog/name/B",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"dog",
+								"get-dog",
+								"name",
+								"B"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDogsByGender",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/dog/get-dog/gender/Male",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"dog",
+								"get-dog",
+								"gender",
+								"Male"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDogsByStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/dog/get-dog/status/Open",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"dog",
+								"get-dog",
+								"status",
+								"Open"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterDog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\":\"Zeus\",\r\n    \"displayImage\":\"SiberianHusky-Adult.jpg \",\r\n    \"breed\":\"Siberian Husky \",\r\n    \"birthDate\":\"2020-05-21\",\r\n    \"gender\":\"Male\",\r\n    \"color\":\"White-Grey and Black\",\r\n    \"size\":\"24kg\",\r\n    \"adoptionStatus\":\"Open\",\r\n    \"description\":\"Calm and Vigilant; sometimes goofy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/dog/register-dog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"dog",
+								"register-dog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateDog",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adoptionStatus\":\"Adopted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/dog/update-dog/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"dog",
+								"update-dog",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteDog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/dog/delete-dog/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"dog",
+								"delete-dog",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Application",
+			"item": [
+				{
+					"name": "GetAllApplications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/application/all-application",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"application",
+								"all-application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApplicationByDog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/application/get-application/dog/Max",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"application",
+								"get-application",
+								"dog",
+								"Max"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApplicationByApplicant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/application/get-application/applicant/Pineda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"application",
+								"get-application",
+								"applicant",
+								"Pineda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApplicationsByApplicantId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4200/api/application/get-application/applicant-id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"application",
+								"get-application",
+								"applicant-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SubmitApplication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"applicant\":{\r\n        \"id\":1\r\n    },\r\n    \"dog\":{\r\n        \"id\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/application/submit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"application",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteApplication",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/application/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"application",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApplicationById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/api/application/get-application/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"application",
+								"get-application",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateApplication",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Approved\",\r\n    \"submittedDate\": \"2023-10-23T21:39:13\",\r\n    \"reviewDate\": null,\r\n    \"approvalDate\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/api/application/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"api",
+								"application",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
