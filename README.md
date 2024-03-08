@@ -1,9 +1,13 @@
-# IT192 Term-end Project Requirement: Dog Adoption Management System
+# Full-stack Web-based Dog Adoption Management System
 
-## Developers
+Completed as term-end project for the course IT192 Application Development 2 (1Q SY 23-24), under the curriculum of BS Information Technology - Mapua University.
 
-* Azzouni, Abdulrahman
-* Nitta, Kennichi
-* Rivadenera, Johann Zeke
-* Resurreccion, Justin Carl
-* Pineda, Andrea May
+<h1>Team:</h1>
+<ul>
+  <li>Azzouni, Abdulrahman</li>
+  <li>Nitta, Kennichi</li>
+  <li>Pineda, Andrea May</li>
+  <li>Resurreccion, Justin Carl</li>
+  <li>Rivadinera, Johann Zeke</li>
+</ul>
+
