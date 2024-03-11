@@ -1,0 +1,11 @@
+id,adoption_status,age,birth_date,breed,color,description,display_image,gender,name,registered_date,size
+1,Open,53,2019-05-15,"Alaskan Malamute","Black and white","Friendly and energetic.",AlaskanMalamute-Adult.jpg,Female,Bella,2023-10-26,30kg
+2,Open,66,2018-04-22,Aspin,brown,"Playful and affectionate.",Aspin-Adult.jpg,Female,Lucy,2023-10-26,17kg
+3,Open,62,2018-08-15,"Border Collie","Sable and White","Friendly and loyal adult Collie. Well-behaved and great with families.",BorderCollie-Adult.jpg,Male,Rex,2023-10-26,28kg
+4,Open,78,2017-04-20,"German Shepherd","Black and Tan","Loyal and intelligent adult German Shepherd. Well-trained and great with families.",GermanSheperd-Adult.png,Male,Juno,2023-10-26,35kg
+5,Open,68,2018-02-10,"Golden Retriever",Golden,"Friendly and affectionate adult Golden Retriever. Great with kids and ready for a loving family.",GoldenRetriever-Adult.jpg,Male,Buddy,2023-10-26,32kg
+6,Open,23,2021-11-01,"Pembroke Welsh Corgi",Red,"Tea house owner",PembrokeWelshCorgi-Adult.jpg,Male,Taroumaru,2023-10-26,12kg
+7,Open,13,2022-09-23,Pomeranian,Red,"Full of energy indoors, lazy when outdoor",Pomeranian-Adult.jpg,Female,Zoe,2023-10-26,3kg
+8,Open,14,2022-08-14,Pug,"Light Brown","Likes to roam around and play with other dogs","Pug-Adult.jpg ",Male,Duke,2023-10-26,7kg
+9,Open,15,2022-07-15,"Shih Tzu",Brindle,"Sympathetic and cheerful; Fun company","ShihTzu-Adult.jpg ",Male,Bubbles,2023-10-26,5kg
+10,Open,41,2020-05-21,"Siberian Husky ","White-Grey and Black","Calm and Vigilant; sometimes goofy",SiberianHusky-Adult.png,Male,Zeus,2023-10-26,24kg
