@@ -1,4 +1,4 @@
-# Full-stack Web-based Dog Adoption Management System
+# Web-based Dog Adoption Management System
 
 Completed as term-end project for the course IT192 Application Development 2 (1Q SY 23-24), under the curriculum of BS Information Technology - Mapua University.
 
